@@ -17,7 +17,7 @@ public class Stream {
         long zeroCount = 0;
         long overZeroCount = 0;
         //average
-        double average = intStreamFromArray.
+        double average = IntStream.of(arr).
                 average().getAsDouble();
         System.out.println("The average of array is: " + average);
 
@@ -30,18 +30,18 @@ public class Stream {
 
 
         //zeroes
-        zeroCount = intStreamFromArray.filter(a -> a == 0).count();
+        zeroCount = IntStream.of(arr).filter(a -> a == 0).count();
         System.out.println("The number of elements vith value = 0 is: " + zeroCount);
 
 
        //countOverZero
-        overZeroCount = intStreamFromArray.filter(a -> a > 0).sum();
+        overZeroCount = IntStream.of(arr).filter(a -> a > 0).sum();
         System.out.println("The sum of the lements above zero is: " + overZeroCount);
 
 
         //multiply
         System.out.println("The array values multiplied by 5 are: ");
-        intStreamFromArray.map(s -> s*5).forEach(System.out::println);
+        IntStream.of(arr).map(s -> s*5).forEach(a -> System.out.print(a + " "));
 
     }
 }
